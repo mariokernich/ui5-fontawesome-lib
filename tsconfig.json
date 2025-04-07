@@ -1,18 +1,18 @@
 {
-	"compilerOptions": {
-		"target": "es2023",
-		"module": "es2022",
-		"moduleResolution": "node",
-		"skipLibCheck": true,
-		"allowJs": true,
-		"strict": true,
-		"strictNullChecks": false,
-		"strictPropertyInitialization": false,
-		"rootDir": "./",
-		"types": ["@openui5/types", "@types/jquery", "@types/qunit"],
-		"paths": {
-			"fontawesome/icons/lib/*": ["./src/*"]
-		}
-	},
-	"include": ["./src/**/*", "./test/**/*"]
+  "compilerOptions": {
+    "target": "es2023",
+    "module": "es2022",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
+    "rootDir": "./",
+    "types": ["@openui5/types", "@types/jquery", "@types/qunit"],
+    "paths": {
+      "fontawesome/icons/lib/*": ["./src/*"]
+    }
+  },
+  "include": ["./src/**/*", "./test/**/*"]
 }

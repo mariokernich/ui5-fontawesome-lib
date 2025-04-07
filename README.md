@@ -1,85 +1,110 @@
 # UI5 Library fontawesome.icons.lib
 
-Insert the purpose of this project and some interesting info here...
+This library uses the free version of [Font Awesome](https://fontawesome.com/icons) to extend the UI5 icon library.
 
 ## Description
 
-This app demonstrates a TypeScript setup for developing UI5 libraries. The central entry point for all information about using TypeScript with UI5 is at [https://sap.github.io/ui5-typescript](https://sap.github.io/ui5-typescript).
+| Font Awesome | UI5 Namespace         | Example                                |
+| ------------ | --------------------- | -------------------------------------- |
+| fa-regular   | sap-icon://fa-regular | &lt;Icon src="sap-icon://fa-regular/face-grin-hearts" /> |
+| fa-solid     | sap-icon://fa-solid   | &lt;Icon src="sap-icon://fa-solid/face-grin-hearts" />   |
+| fa-brands    | sap-icon://fa-brands  | &lt;Icon src="sap-icon://fa-brands/github" />            |
 
-**The template is inspired by the [`SAP-samples/ui5-typescript-control-library`](https://github.com/SAP-samples/ui5-typescript-control-library) project. It explains how this setup is created and how all the bits and pieces fit together.**
+The version of this library corresponds to the Font Awesome version used.
+
+To use this library, add it as a dependency to your UI5 project.
+
+Run `npm run start` to view a complete list of all available icons.
+
+![Screenshot](screenshot.png)
+
+## Font Awesome Pro
+
+You can fork this library as a private repository and add your Font Awesome Pro icons.
+
+### Steps to Add Font Awesome Pro Icons
+
+1. Follow the official Font Awesome tutorial: [Font Awesome Pro Setup](https://docs.fontawesome.com/web/setup/packages).
+2. Create a `.npmrc` file with the following content:
+   ```
+   @fortawesome:registry=https://npm.fontawesome.com/
+   //npm.fontawesome.com/:_authToken=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+   ```
+3. Install the Pro files using npm:
+   ```sh
+   npm install --save @fortawesome/fontawesome-pro
+   ```
+4. Adjust the `generate.js` script to include the Pro font files in the build process.
+5. Update the `library.ts` file to register the new styles.
 
 ## Requirements
 
-Either [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) for dependency management.
+You need either [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) for dependency management.
 
 ## Preparation
 
-Use `npm` (or `yarn`) to install the dependencies:
+Install the dependencies using npm or yarn:
 
 ```sh
 npm install
 ```
 
-(To use yarn, just do `yarn` instead.)
+(For yarn, use `yarn` instead.)
 
 ## Run the Library
 
-Execute the following command to run the library locally for development in watch mode (the browser reloads the app automatically when there are changes in the source code):
+Run the library locally in watch mode for development:
 
 ```sh
 npm start
 ```
 
-As shown in the terminal after executing this command, the app is then running on http://localhost:8080/. A browser window with the URL pointing to your controls' test page should automatically open.
+After running this command, the app will be available at [http://localhost:8080/](http://localhost:8080/). A browser window should automatically open, pointing to your controls' test page.
 
-(When using yarn, do `yarn start` instead.)
+(For yarn, use `yarn start` instead.)
 
 ## Debug the Library
 
-In the browser, you can directly debug the original TypeScript code, which is supplied via sourcemaps (need to be enabled in the browser's developer console if it does not work straight away). If the browser doesn't automatically jump to the TypeScript code when setting breakpoints, use e.g. `Ctrl`/`Cmd` + `P` in Chrome to open the `*.ts` file you want to debug.
+You can debug the original TypeScript code in the browser using sourcemaps. Ensure sourcemaps are enabled in the browser's developer console. If the browser doesn't automatically jump to the TypeScript code, use shortcuts like `Ctrl`/`Cmd` + `P` in Chrome to open the desired `*.ts` file.
 
 ## Build the Library
 
-### Unoptimized (but quick)
+### Unoptimized Build (Quick)
 
-Execute the following command to build the project and get an app that can be deployed:
+Build the project to generate an app ready for deployment:
 
 ```sh
 npm run build
 ```
 
-The result is placed into the `dist` folder. To start the generated package, just run
+The output will be placed in the `dist` folder. To start the generated package, run:
 
 ```sh
 npm run start:dist
 ```
 
-Note that HTML page still loads the UI5 framework from the relative URL `resources/...`, which does not physically exist, but is only provided dynamically by the UI5 tooling. So for an actual deployment you should change this URL to either [the CDN](https://sdk.openui5.org/#/topic/2d3eb2f322ea4a82983c1c62a33ec4ae) or your local deployment of UI5.
+Note: The HTML page still loads the UI5 framework from the relative URL `resources/...`, which is dynamically provided by the UI5 tooling. For deployment, update this URL to either [the CDN](https://sdk.openui5.org/#/topic/2d3eb2f322ea4a82983c1c62a33ec4ae) or your local UI5 deployment.
 
-(When using yarn, do `yarn build` and `yarn start:dist` instead.)
+(For yarn, use `yarn build` and `yarn start:dist` instead.)
 
 ## Check the Code
 
-Do the following to run a TypeScript check:
+Run a TypeScript type check:
 
 ```sh
 npm run ts-typecheck
 ```
 
-This checks the libraries code for any type errors (but will also complain in case of fundamental syntax issues which break the parsing).
+This checks the library's code for type errors and syntax issues.
 
-To lint the TypeScript code, do:
+To lint the TypeScript code, run:
 
 ```sh
 npm run lint
 ```
 
-(Again, when using yarn, do `yarn ts-typecheck` and `yarn lint` instead.)
+(For yarn, use `yarn ts-typecheck` and `yarn lint` instead.)
 
 ## License
 
-This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
-
----
-
-###### This template is provided to you by Wouter Lemaire and contributors :wink:
+This project is licensed under the Apache Software License, version 2.0, except as noted otherwise in the [LICENSE](LICENSE) file.

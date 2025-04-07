@@ -1,79 +1,79 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const faRoot = path.resolve(__dirname, './node_modules/@fortawesome/fontawesome-free');
-const targetRoot = path.resolve(__dirname, './src/fonts');
+const faRoot = path.resolve(
+	__dirname,
+	"./node_modules/@fortawesome/fontawesome-free"
+);
+const targetRoot = path.resolve(__dirname, "./src/fonts");
 
 const copy = (src, dest) => {
-    console.log('Copying ' + src + ' to ' + dest);
-    fs.copyFile(path.resolve(__dirname, faRoot + src), path.resolve(__dirname, targetRoot + dest), (err) => {
-        if (err) {
-            console.log(err);
-        }
-    });
-}
+	console.log("Copying " + src + " to " + dest);
+	const targetPath = path.resolve(__dirname, targetRoot + dest);
+	const targetDirectoryPath = path.dirname(targetPath);
 
-copy('/webfonts/fa-solid-900.ttf', '/fa-solid/fa-solid.ttf');
-copy('/webfonts/fa-solid-900.woff2', '/fa-solid/fa-solid.woff2');
+	if (!fs.existsSync(targetDirectoryPath)) {
+		fs.mkdirSync(targetDirectoryPath, { recursive: true });
+	}
 
-const families = require('./node_modules/@fortawesome/fontawesome-free/metadata/icon-families.json');
+	fs.copyFile(path.resolve(__dirname, faRoot + src), targetPath, (err) => {
+		if (err) {
+			console.log(err);
+		}
+	});
+};
 
-const solidIcons = {};
-for (const key in families) {
-    const icon = families[key];
-    if (icon.familyStylesByLicense.free) {
-        icon.familyStylesByLicense.free.forEach(family => {
-            if (family.family === 'classic' && family.style === 'solid') {
-                solidIcons[key] = icon.unicode;
-            }
-        });
-    }
-}
+const families = require("./node_modules/@fortawesome/fontawesome-free/metadata/icon-families.json");
 
-fs.writeFile(path.resolve(__dirname, targetRoot + '/fa-solid/fa-solid.json'), JSON.stringify(solidIcons), (err) => {
-    if (err) {
-        console.log(err);
-    }
+const fetchFont = (options) => {
+	const icons = {};
+	for (const key in families) {
+		const icon = families[key];
+		if (icon.familyStylesByLicense.free) {
+			icon.familyStylesByLicense.free.forEach((family) => {
+				if (family.family === "classic" && family.style === options.style) {
+					icons[key] = icon.unicode;
+				}
+			});
+		}
+	}
+
+	copy(
+		`/webfonts/${options.name}-${options.weight}.ttf`,
+		`/${options.name}/${options.name}.ttf`
+	);
+	copy(
+		`/webfonts/${options.name}-${options.weight}.woff2`,
+		`/${options.name}/${options.name}.woff2`
+	);
+	copy("/LICENSE.txt", `/${options.name}/LICENSE.txt`);
+
+	fs.writeFile(
+		path.resolve(
+			__dirname,
+			`${targetRoot}/${options.name}/${options.name}.json`
+		),
+		JSON.stringify(icons),
+		(err) => {
+			if (err) {
+				console.log(err);
+			}
+		}
+	);
+};
+
+fetchFont({
+	name: "fa-solid",
+	style: "solid",
+	weight: 900,
 });
-
-copy('/webfonts/fa-regular-400.ttf', '/fa-regular/fa-regular.ttf');
-copy('/webfonts/fa-regular-400.woff2', '/fa-regular/fa-regular.woff2');
-
-const regularIcons = {};
-for (const key in families) {
-    const icon = families[key];
-    if (icon.familyStylesByLicense.free) {
-        icon.familyStylesByLicense.free.forEach(family => {
-            if (family.family === 'classic' && family.style === 'regular') {
-                regularIcons[key] = icon.unicode;
-            }
-        });
-    }
-}
-
-fs.writeFile(path.resolve(__dirname, targetRoot + '/fa-regular/fa-regular.json'), JSON.stringify(regularIcons), (err) => {
-    if (err) {
-        console.log(err);
-    } 
+fetchFont({
+	name: "fa-regular",
+	style: "regular",
+	weight: 400,
 });
-
-copy('/webfonts/fa-brands-400.ttf', '/fa-brands/fa-brands.ttf');
-copy('/webfonts/fa-brands-400.woff2', '/fa-brands/fa-brands.woff2');
-
-const brandIcons = {};
-for (const key in families) {
-    const icon = families[key];
-    if (icon.familyStylesByLicense.free) {
-        icon.familyStylesByLicense.free.forEach(family => {
-            if (family.family === 'classic' && family.style === 'brands') {
-                brandIcons[key] = icon.unicode;
-            }
-        });
-    }
-}
-
-fs.writeFile(path.resolve(__dirname, targetRoot + '/fa-brands/fa-brands.json'), JSON.stringify(brandIcons), (err) => {
-    if (err) {
-        console.log(err);
-    }
+fetchFont({
+	name: "fa-brands",
+	style: "brands",
+	weight: 400,
 });
