@@ -30,7 +30,7 @@ To use this library, add it as a dependency to your UI5 project.
 
 Clone the repository and run `npm run start` to view a complete list of all available icons.
 
-![Screenshot](screenshot.png)
+![Screenshot](screen.png)
 
 ## Usage in UI5 Projects
 
