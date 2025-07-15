@@ -28,7 +28,7 @@ The version of this library corresponds to the Font Awesome version used.
 
 To use this library, add it as a dependency to your UI5 project.
 
-Run `npm run start` to view a complete list of all available icons.
+Clone the repository and run `npm run start` to view a complete list of all available icons.
 
 ![Screenshot](screenshot.png)
 
