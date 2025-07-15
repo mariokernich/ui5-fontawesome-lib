@@ -1,0 +1,43 @@
+# Development files
+.eslintrc.js
+.eslintrc.json
+karma.conf.js
+karma-ci.conf.js
+karma-ci-cov.conf.js
+tsconfig.json
+ui5.yaml
+ui5-dist.yaml
+
+# Build artifacts
+coverage/
+.nyc_output/
+
+# Development dependencies
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test files
+test/
+test-resources/
+
+# Source maps (optional - you might want to include these)
+*.map
+
+# Temporary files
+tmp/
+temp/

@@ -2,10 +2,24 @@
 
 This library uses the free version of [Font Awesome](https://fontawesome.com/icons) to extend the UI5 icon library.
 
+## Installation
+
+### NPM Package
+
+Install the library from npm:
+
+```sh
+npm install ui5-fontawesome-lib
+```
+
+### Manual Installation
+
+You can also add it as a dependency to your UI5 project manually.
+
 ## Description
 
-| Font Awesome | UI5 Namespace         | Example                                |
-| ------------ | --------------------- | -------------------------------------- |
+| Font Awesome | UI5 Namespace         | Example                                                  |
+| ------------ | --------------------- | -------------------------------------------------------- |
 | fa-regular   | sap-icon://fa-regular | &lt;Icon src="sap-icon://fa-regular/face-grin-hearts" /> |
 | fa-solid     | sap-icon://fa-solid   | &lt;Icon src="sap-icon://fa-solid/face-grin-hearts" />   |
 | fa-brands    | sap-icon://fa-brands  | &lt;Icon src="sap-icon://fa-brands/github" />            |
@@ -17,6 +31,43 @@ To use this library, add it as a dependency to your UI5 project.
 Run `npm run start` to view a complete list of all available icons.
 
 ![Screenshot](screenshot.png)
+
+## Usage in UI5 Projects
+
+After installation, you need to configure the UI5 middleware to serve the library resources. Add the following configuration to your `ui5.yaml`:
+
+```yaml
+server:
+  customMiddleware:
+    - name: ui5-middleware-servestatic
+      afterMiddleware: compression
+      mountPath: /resources/fontawesome/icons/lib/
+      configuration:
+        npmPackagePath: 'ui5-fontawesome-lib/dist/resources/fontawesome/icons/lib'
+```
+
+Additionally, you need to add the library dependency to your `manifest.json`:
+
+```json
+{
+  "dependencies": {
+    "minUI5Version": "1.108.44",
+    "libs": {
+      "sap.ui.core": {},
+      "sap.m": {},
+      "fontawesome.icons.lib": {}
+    }
+  }
+}
+```
+
+Then you can use the Font Awesome icons in your UI5 applications:
+
+```xml
+<Icon src="sap-icon://fa-solid/heart" />
+<Icon src="sap-icon://fa-regular/star" />
+<Icon src="sap-icon://fa-brands/github" />
+```
 
 ## Font Awesome Pro
 

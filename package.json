@@ -1,20 +1,29 @@
 {
-  "name": "fontawesome.icons.lib",
+  "name": "ui5-fontawesome-lib",
   "version": "6.7.2",
-  "description": "UI5 Library: fontawesome.icons.lib",
+  "description": "UI5 Library: Font Awesome icons integration for SAP UI5/OpenUI5 applications",
   "author": "Mario Kernich",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marioke/ui5-fontawesome-library.git"
+  },
+  "keywords": [
+    "ui5",
+    "openui5",
+    "sapui5",
+    "fontawesome",
+    "icons",
+    "sap",
+    "typescript"
+  ],
+  "main": "dist/resources/fontawesome/icons/lib/library.js",
   "types": "dist/index.d.ts",
   "files": [
-    ".eslintrc.js",
-    "LICENCE",
-    "README.md",
-    "tsconfig.json",
-    "ui5.yaml",
-    "dist/**/*.d.ts",
-    "dist/**/*.d.ts.map",
-    "src",
-    "test"
+    "dist/**/*",
+    "src/**/*",
+    "LICENSE",
+    "README.md"
   ],
   "scripts": {
     "clean": "rimraf dist coverage",
@@ -29,12 +38,14 @@
     "karma": "karma start",
     "karma-ci": "karma start karma-ci.conf.js",
     "karma-ci-cov": "karma start karma-ci-cov.conf.js",
-    "test": "npm run lint && npm run karma-ci-cov"
+    "test": "npm run lint && npm run karma-ci-cov",
+    "prepublishOnly": "npm run build",
+    "deploy": "node scripts/deploy.js"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@fortawesome/fontawesome-free": "6.7.2",
     "@openui5/types": "1.134.0",
-    "@ui5/cli": "^4.0.6",
+    "@ui5/cli": "latest",
     "@ui5/ts-interface-generator": "^0.8.3",
     "eslint": "^9.9.1",
     "globals": "^15.9.0",
@@ -48,6 +59,5 @@
     "typescript-eslint": "^8.3.0",
     "ui5-middleware-livereload": "^3.0.3",
     "ui5-tooling-transpile": "^3.4.8"
-  },
-  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+  }
 }
