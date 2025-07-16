@@ -43,7 +43,7 @@ const page = new Page({
 			type: "Transparent",
 			icon: "sap-icon://fa-brands/npm",
 			press: () => {
-				window.open("https://www.npmjs.com/package/ui5-fontawesome-lib", "_blank");
+				window.open("https://www.npmjs.com/package/ui5-fontawesome-library", "_blank");
 			}
 		}),
 		new Button({
@@ -51,7 +51,7 @@ const page = new Page({
 			type: "Transparent",
 			icon: "sap-icon://fa-brands/github",
 			press: () => {
-				window.open("https://github.com/mariokernich/ui5-fontawesome-lib", "_blank");
+				window.open("https://github.com/mariokernich/ui5-fontawesome-library", "_blank");
 			}
 		}),
 		searchField,
@@ -66,7 +66,7 @@ page.placeAt("content");
 
 const showPack = async (iconPack: string) => {
 	const url = sap.ui.require.toUrl(
-		"fontawesome/icons/lib/fonts/" + iconPack + "/" + iconPack + ".json"
+		"fontawesome/icons/library/fonts/" + iconPack + "/" + iconPack + ".json"
 	);
 	const model = new JSONModel();
 

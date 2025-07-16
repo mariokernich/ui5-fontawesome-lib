@@ -1,12 +1,12 @@
 specVersion: "4.0"
 metadata:
-  name: fontawesome.icons.lib
+  name: fontawesome.icons.library
 type: library
 resources:
   configuration:
     paths:
-      src: dist/resources/fontawesome/icons/lib/
-      test: dist/test-resources/fontawesome/icons/lib/
+      src: dist/resources/fontawesome/icons/library/
+      test: dist/test-resources/fontawesome/icons/library/
 framework:
   name: OpenUI5
   version: 1.134.0

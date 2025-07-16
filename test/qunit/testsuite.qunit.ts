@@ -1,8 +1,8 @@
 export default {
-	name: "QUnit TestSuite for fontawesome.icons.lib",
+	name: "QUnit TestSuite for fontawesome.icons.library",
 	defaults: {
 		ui5: {
-			libs: ["sap.ui.core", "fontawesome.icons.lib"],
+			libs: ["sap.ui.core", "fontawesome.icons.library"],
 			theme: "sap_horizon"
 		},
 		qunit: {
@@ -19,7 +19,7 @@ export default {
 		// test file for the Example control
 		Example: {
 			title: "QUnit Test for Example",
-			_alternativeTitle: "QUnit tests: fontawesome.icons.lib.Example"
+			_alternativeTitle: "QUnit tests: fontawesome.icons.library.Example"
 		}
 	}
 };

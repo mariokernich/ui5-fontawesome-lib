@@ -1,12 +1,12 @@
 {
-  "name": "ui5-fontawesome-lib",
+  "name": "ui5-fontawesome-library",
   "version": "6.7.2",
   "description": "UI5 Library: Font Awesome icons integration for SAP UI5/OpenUI5 applications",
   "author": "Mario Kernich",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marioke/ui5-fontawesome-lib.git"
+    "url": "https://github.com/marioke/ui5-fontawesome-library.git"
   },
   "keywords": [
     "ui5",
@@ -17,7 +17,7 @@
     "sap",
     "typescript"
   ],
-  "main": "dist/resources/fontawesome/icons/lib/library.js",
+  "main": "dist/resources/fontawesome/icons/library/library.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist/**/*",
@@ -30,9 +30,9 @@
     "build": "npm run build:icons && ui5 build --clean-dest",
     "build:ts-interfaces": "npx @ui5/ts-interface-generator",
     "build:icons": "node generate.js",
-    "start": "npm run build:icons && ui5 serve -o test-resources/fontawesome/icons/lib/IconListPreview.html",
+    "start": "npm run build:icons && ui5 serve -o test-resources/fontawesome/icons/library/IconListPreview.html",
     "start:dist": "npm run build:icons && npm start -- --config ui5-dist.yaml",
-    "testsuite": "ui5 serve -o test-resources/fontawesome/icons/lib/qunit/testsuite.qunit.html",
+    "testsuite": "ui5 serve -o test-resources/fontawesome/icons/library/qunit/testsuite.qunit.html",
     "ts-typecheck": "tsc --noEmit",
     "lint": "eslint src test",
     "karma": "karma start",

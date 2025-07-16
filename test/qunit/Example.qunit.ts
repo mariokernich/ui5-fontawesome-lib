@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import { ExampleColor } from "fontawesome/icons/lib/library";
-import Example from "fontawesome/icons/lib/Example";
+import Example from "fontawesome/icons/library/Example";
+import { ExampleColor } from "fontawesome/icons/library/library";
 
 // prepare DOM
 const elem = document.createElement("div");

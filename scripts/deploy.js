@@ -69,7 +69,7 @@ console.log('📤 Publishing to npm...');
 try {
     execSync('npm publish --access public', { stdio: 'inherit' });
     console.log('✅ Successfully published to npm!');
-    console.log(`🌐 Package available at: https://www.npmjs.com/package/ui5-fontawesome-lib`);
+    console.log(`🌐 Package available at: https://www.npmjs.com/package/ui5-fontawesome-library`);
 } catch (error) {
     console.error('❌ Failed to publish to npm');
     process.exit(1);

@@ -4,7 +4,7 @@
 
 This library seamlessly integrates [Font Awesome](https://fontawesome.com/icons) icons into the SAP UI5 icon system, providing access to thousands of beautiful, scalable icons for your Fiori applications.
 
-[![npm version](https://img.shields.io/npm/v/ui5-fontawesome-lib.svg)](https://www.npmjs.com/package/ui5-fontawesome-lib)
+[![npm version](https://img.shields.io/npm/v/ui5-fontawesome-library.svg)](https://www.npmjs.com/package/ui5-fontawesome-library)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![UI5](https://img.shields.io/badge/UI5-1.108.44+-green.svg)](https://sapui5.hana.ondemand.com/)
 
@@ -13,7 +13,7 @@ This library seamlessly integrates [Font Awesome](https://fontawesome.com/icons)
 ### NPM Package (Recommended)
 
 ```bash
-npm install ui5-fontawesome-lib
+npm install ui5-fontawesome-library
 ```
 
 ### Manual Installation
@@ -40,7 +40,7 @@ Clone this repository and add it as a dependency to your local UI5 project setup
 ### 1. Install Dependencies
 
 ```bash
-npm install ui5-fontawesome-lib ui5-middleware-servestatic
+npm install ui5-fontawesome-library ui5-middleware-servestatic
 ```
 
 ### 2. Configure UI5 Middleware
@@ -52,9 +52,9 @@ server:
   customMiddleware:
     - name: ui5-middleware-servestatic
       afterMiddleware: compression
-      mountPath: /resources/fontawesome/icons/lib/
+      mountPath: /resources/fontawesome/icons/library/
       configuration:
-        npmPackagePath: 'ui5-fontawesome-lib/dist/resources/fontawesome/icons/lib'
+        npmPackagePath: 'ui5-fontawesome-library/dist/resources/fontawesome/icons/library'
 ```
 
 ### 3. Update Manifest
@@ -68,7 +68,7 @@ Add the library dependency to your `manifest.json`:
     "libs": {
       "sap.ui.core": {},
       "sap.m": {},
-      "fontawesome.icons.lib": {}
+      "fontawesome.icons.library": {}
     }
   }
 }
@@ -140,8 +140,8 @@ Want to use Font Awesome Pro icons? Here's how to extend this library:
 
 ```bash
 # Clone the repository
-git clone https://github.com/mariokernich/ui5-fontawesome-lib.git
-cd ui5-fontawesome-lib
+git clone https://github.com/mariokernich/ui5-fontawesome-library.git
+cd ui5-fontawesome-library
 
 # Install dependencies
 npm install
@@ -175,7 +175,7 @@ Enable sourcemaps in your browser's developer console to debug the original Type
 ## 📊 Project Structure
 
 ```
-ui5-fontawesome-lib/
+ui5-fontawesome-library/
 ├── src/                    # Source files
 │   ├── fonts/             # Font Awesome font files
 │   ├── library.ts         # Main library file
@@ -203,8 +203,8 @@ This project is licensed under the Apache Software License, version 2.0 - see th
 
 ## 🔗 Links
 
-- 📦 [NPM Package](https://www.npmjs.com/package/ui5-fontawesome-lib)
-- 🐙 [GitHub Repository](https://github.com/mariokernich/ui5-fontawesome-lib)
+- 📦 [NPM Package](https://www.npmjs.com/package/ui5-fontawesome-library)
+- 🐙 [GitHub Repository](https://github.com/mariokernich/ui5-fontawesome-library)
 - 📚 [Font Awesome Documentation](https://fontawesome.com/docs)
 - 🎯 [SAP UI5 Documentation](https://sapui5.hana.ondemand.com/)
 

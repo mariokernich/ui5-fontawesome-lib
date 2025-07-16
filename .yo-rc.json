@@ -1,6 +1,6 @@
 {
   "generator-ui5-ts-library": {
-    "namespace": "fontawesome.icons.lib",
+    "namespace": "fontawesome.icons.library",
     "framework": "OpenUI5",
     "frameworkVersion": "1.134.0",
     "flat": true,
@@ -10,8 +10,8 @@
     "tstypesVersion": "1.134.0",
     "metadataOptionsImportLine": "import type { MetadataOptions } from \"sap/ui/core/Element\";\n",
     "metadataOptionsType": "MetadataOptions",
-    "libId": "fontawesome.icons.lib",
-    "libURI": "fontawesome/icons/lib",
+    "libId": "fontawesome.icons.library",
+    "libURI": "fontawesome/icons/library",
     "libURIFlat": "",
     "libBasePath": "../../..",
     "cdnDomain": "sdk.openui5.org",

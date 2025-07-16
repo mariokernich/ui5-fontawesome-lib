@@ -7,8 +7,8 @@ module.exports = function (config) {
 			"test/**/*.ts": ["ui5-transpile"]
 		},
 		proxies: {
-			'/resources/fontawesome/icons/lib/': '/base/src/',
-			'/test-resources/fontawesome/icons/lib/': '/base/test/',
+			'/resources/fontawesome/icons/library/': '/base/src/',
+			'/test-resources/fontawesome/icons/library/': '/base/test/',
 		},
 		coverageReporter: {
 			dir: "coverage",
