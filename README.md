@@ -1,40 +1,51 @@
-# UI5 Library fontawesome.icons.lib
+# 🎨 UI5 FontAwesome Icons Library
 
-This library uses the free version of [Font Awesome](https://fontawesome.com/icons) to extend the UI5 icon library.
+> **Enhance your SAP UI5/OpenUI5 applications with modern Font Awesome icons!** 🚀
 
-## Installation
+This library seamlessly integrates [Font Awesome](https://fontawesome.com/icons) icons into the SAP UI5 icon system, providing access to thousands of beautiful, scalable icons for your Fiori applications.
 
-### NPM Package
+[![npm version](https://img.shields.io/npm/v/ui5-fontawesome-lib.svg)](https://www.npmjs.com/package/ui5-fontawesome-lib)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![UI5](https://img.shields.io/badge/UI5-1.108.44+-green.svg)](https://sapui5.hana.ondemand.com/)
 
-Install the library from npm:
+## 📦 Installation
 
-```sh
+### NPM Package (Recommended)
+
+```bash
 npm install ui5-fontawesome-lib
 ```
 
 ### Manual Installation
 
-You can also add it as a dependency to your UI5 project manually.
+Clone this repository and add it as a dependency to your local UI5 project setup.
 
-## Description
+## 🎯 Features
 
-| Font Awesome | UI5 Namespace         | Example                                                  |
-| ------------ | --------------------- | -------------------------------------------------------- |
-| fa-regular   | sap-icon://fa-regular | &lt;Icon src="sap-icon://fa-regular/face-grin-hearts" /> |
-| fa-solid     | sap-icon://fa-solid   | &lt;Icon src="sap-icon://fa-solid/face-grin-hearts" />   |
-| fa-brands    | sap-icon://fa-brands  | &lt;Icon src="sap-icon://fa-brands/github" />            |
+- ✨ **Seamless Integration**: Use Font Awesome icons with standard UI5 Icon controls
+- 🎨 **3 Icon Styles**: Regular, Solid, and Brand icons
 
-The version of this library corresponds to the Font Awesome version used.
+## 📋 Icon Mapping
 
-To use this library, add it as a dependency to your UI5 project.
+| Font Awesome Style | UI5 Namespace           | Example Usage                                           |
+| ------------------ | ----------------------- | ------------------------------------------------------- |
+| `fa-regular`       | `sap-icon://fa-regular` | `<Icon src="sap-icon://fa-regular/face-grin-hearts" />` |
+| `fa-solid`         | `sap-icon://fa-solid`   | `<Icon src="sap-icon://fa-solid/face-grin-hearts" />`   |
+| `fa-brands`        | `sap-icon://fa-brands`  | `<Icon src="sap-icon://fa-brands/github" />`            |
 
-Clone the repository and run `npm run start` to view a complete list of all available icons.
+> 💡 **Pro Tip**: The library version corresponds to the Font Awesome version used, ensuring compatibility and access to the latest icons.
 
-![Screenshot](screen.png)
+## 🛠️ Setup & Configuration
 
-## Usage in UI5 Projects
+### 1. Install Dependencies
 
-After installation, you need to configure the UI5 middleware to serve the library resources. Add the following configuration to your `ui5.yaml`:
+```bash
+npm install ui5-fontawesome-lib ui5-middleware-servestatic
+```
+
+### 2. Configure UI5 Middleware
+
+Add the following configuration to your `ui5.yaml`:
 
 ```yaml
 server:
@@ -46,7 +57,9 @@ server:
         npmPackagePath: 'ui5-fontawesome-lib/dist/resources/fontawesome/icons/lib'
 ```
 
-Additionally, you need to add the library dependency to your `manifest.json`:
+### 3. Update Manifest
+
+Add the library dependency to your `manifest.json`:
 
 ```json
 {
@@ -61,101 +74,144 @@ Additionally, you need to add the library dependency to your `manifest.json`:
 }
 ```
 
-Then you can use the Font Awesome icons in your UI5 applications:
+## 💻 Usage Examples
+
+### Basic Icon Usage
 
 ```xml
-<Icon src="sap-icon://fa-solid/heart" />
-<Icon src="sap-icon://fa-regular/star" />
+<!-- Regular icons -->
+<Icon src="sap-icon://fa-regular/heart" />
+
+<!-- Solid icons -->
+<Icon src="sap-icon://fa-solid/star" />
+
+<!-- Brand icons -->
 <Icon src="sap-icon://fa-brands/github" />
 ```
 
-## Font Awesome Pro
+### With Icon Properties
 
-You can fork this library as a private repository and add your Font Awesome Pro icons.
-
-### Steps to Add Font Awesome Pro Icons
-
-1. Follow the official Font Awesome tutorial: [Font Awesome Pro Setup](https://docs.fontawesome.com/web/setup/packages).
-2. Create a `.npmrc` file with the following content:
-   ```
-   @fortawesome:registry=https://npm.fontawesome.com/
-   //npm.fontawesome.com/:_authToken=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-   ```
-3. Install the Pro files using npm:
-   ```sh
-   npm install --save @fortawesome/fontawesome-pro
-   ```
-4. Adjust the `generate.js` script to include the Pro font files in the build process.
-5. Update the `library.ts` file to register the new styles.
-
-## Requirements
-
-You need either [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) for dependency management.
-
-## Preparation
-
-Install the dependencies using npm or yarn:
-
-```sh
-npm install
+```xml
+<Icon 
+    src="sap-icon://fa-solid/rocket" 
+    size="2rem" 
+    color="#0070f3" 
+    tooltip="Launch application" />
 ```
 
-(For yarn, use `yarn` instead.)
+### In JavaScript/TypeScript
 
-## Run the Library
+```typescript
+import Icon from "sap/ui/core/Icon";
 
-Run the library locally in watch mode for development:
+const icon = new Icon({
+    src: "sap-icon://fa-solid/check-circle",
+    size: "1.5rem",
+    color: "green"
+});
+```
 
-```sh
+## 🎨 Font Awesome Pro Support
+
+Want to use Font Awesome Pro icons? Here's how to extend this library:
+
+### Setup Pro Icons
+
+1. **Follow the official Font Awesome tutorial**: [Font Awesome Pro Setup](https://docs.fontawesome.com/web/setup/packages)
+
+2. **Create `.npmrc` file**:
+   ```
+   @fortawesome:registry=https://npm.fontawesome.com/
+   //npm.fontawesome.com/:_authToken=YOUR_PRO_TOKEN_HERE
+   ```
+
+3. **Install Pro package**:
+   ```bash
+   npm install --save @fortawesome/fontawesome-pro
+   ```
+
+4. **Update build process**: Modify `generate.js` to include Pro font files
+
+5. **Register new styles**: Update `library.ts` to register additional icon styles
+
+## 🚀 Development
+
+### Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/mariokernich/ui5-fontawesome-lib.git
+cd ui5-fontawesome-lib
+
+# Install dependencies
+npm install
+
+# Start development server
 npm start
 ```
 
-After running this command, the app will be available at [http://localhost:8080/](http://localhost:8080/). A browser window should automatically open, pointing to your controls' test page.
+Visit [http://localhost:8080/](http://localhost:8080/) to see the icon browser with search functionality.
 
-(For yarn, use `yarn start` instead.)
+## 📸 Screenshot
 
-## Debug the Library
+![Icon Browser with Search](screen.png)
 
-You can debug the original TypeScript code in the browser using sourcemaps. Ensure sourcemaps are enabled in the browser's developer console. If the browser doesn't automatically jump to the TypeScript code, use shortcuts like `Ctrl`/`Cmd` + `P` in Chrome to open the desired `*.ts` file.
+*Interactive icon browser with search functionality - run `npm start` to see it in action!*
 
-## Build the Library
+### Available Scripts
 
-### Unoptimized Build (Quick)
+| Command                | Description                                 |
+| ---------------------- | ------------------------------------------- |
+| `npm start`            | 🏃‍♂️ Start development server with live reload |
+| `npm run build`        | 🔨 Build the library for production          |
+| `npm run test`         | 🧪 Run tests and linting                     |
+| `npm run ts-typecheck` | 🔍 TypeScript type checking                  |
+| `npm run lint`         | ✨ ESLint code quality check                 |
 
-Build the project to generate an app ready for deployment:
+### Debugging
 
-```sh
-npm run build
+Enable sourcemaps in your browser's developer console to debug the original TypeScript code. Use `Ctrl`/`Cmd` + `P` in Chrome to open specific `.ts` files.
+
+## 📊 Project Structure
+
+```
+ui5-fontawesome-lib/
+├── src/                    # Source files
+│   ├── fonts/             # Font Awesome font files
+│   ├── library.ts         # Main library file
+│   └── themes/            # UI5 themes
+├── test/                  # Test files
+├── dist/                  # Build output
+└── scripts/               # Build and deployment scripts
 ```
 
-The output will be placed in the `dist` folder. To start the generated package, run:
+## 🤝 Contributing
 
-```sh
-npm run start:dist
-```
+We welcome contributions! Please feel free to submit issues and pull requests.
 
-Note: The HTML page still loads the UI5 framework from the relative URL `resources/...`, which is dynamically provided by the UI5 tooling. For deployment, update this URL to either [the CDN](https://sdk.openui5.org/#/topic/2d3eb2f322ea4a82983c1c62a33ec4ae) or your local UI5 deployment.
+### Development Workflow
 
-(For yarn, use `yarn build` and `yarn start:dist` instead.)
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## Check the Code
+## 📄 License
 
-Run a TypeScript type check:
+This project is licensed under the Apache Software License, version 2.0 - see the [LICENSE](LICENSE) file for details.
 
-```sh
-npm run ts-typecheck
-```
+## 🔗 Links
 
-This checks the library's code for type errors and syntax issues.
+- 📦 [NPM Package](https://www.npmjs.com/package/ui5-fontawesome-lib)
+- 🐙 [GitHub Repository](https://github.com/mariokernich/ui5-fontawesome-lib)
+- 📚 [Font Awesome Documentation](https://fontawesome.com/docs)
+- 🎯 [SAP UI5 Documentation](https://sapui5.hana.ondemand.com/)
 
-To lint the TypeScript code, run:
+## ⭐ Support
 
-```sh
-npm run lint
-```
+If you find this library helpful, please consider giving it a star on GitHub! ⭐
 
-(For yarn, use `yarn ts-typecheck` and `yarn lint` instead.)
+---
 
-## License
-
-This project is licensed under the Apache Software License, version 2.0, except as noted otherwise in the [LICENSE](LICENSE) file.
+**Made with ❤️ for the SAP UI5 community**
