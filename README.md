@@ -154,7 +154,7 @@ Visit [http://localhost:8080/](http://localhost:8080/) to see the icon browser w
 
 ## 📸 Screenshot
 
-![Icon Browser with Search](screen.png)
+![Icon Browser with Search](screenshot.png)
 
 *Interactive icon browser with search functionality - run `npm start` to see it in action!*
 
