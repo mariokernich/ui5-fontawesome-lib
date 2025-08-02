@@ -110,7 +110,7 @@ const showPack = async (iconPack: string) => {
 	const tableModel = new JSONModel(tableData);
 	tableModel.setSizeLimit(9999);
 
-	new Title({ text: iconPack + " ("  }).addStyleClass("sapUiSmallMarginBegin sapUiSmallMarginTop sapUiSmallMarginEnd").placeAt("content");
+	new Title({ text: iconPack + " (" + tableData.length + " icons)" }).addStyleClass("sapUiSmallMarginBegin sapUiSmallMarginTop sapUiSmallMarginEnd").placeAt("content");
 
 	const table = new Table({
 		noDataText: "No icons found",
