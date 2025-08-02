@@ -1,6 +1,6 @@
 specVersion: "1.0"
 metadata:
-  name: fontawesome.icons.library
+  name: fontawesome.icons.lib
 type: library
 framework:
   name: OpenUI5

@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 <library xmlns="http://www.sap.com/sap.ui.library.xsd">
-	<name>fontawesome.icons.library</name>
+	<name>fontawesome.icons.lib</name>
 	<vendor>Mario Kernich</vendor>
 	<version>${version}</version>
 	<copyright>${copyright}</copyright>
-	<title>fontawesome.icons.library</title>
-	<documentation>Some description about fontawesome.icons.library</documentation>
+	<title>fontawesome.icons.lib</title>
+	<documentation>Some description about fontawesome.icons.lib</documentation>
 	<dependencies>
 		<dependency>
 			<libraryName>sap.ui.core</libraryName>

@@ -13,7 +13,7 @@
       "@openui5/types"
     ],
     "paths": {
-      "fontawesome/icons/library/*": [
+      "fontawesome/icons/lib/*": [
         "./src/*"
       ]
     }

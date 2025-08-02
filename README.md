@@ -4,10 +4,10 @@
 
 This library seamlessly integrates [Font Awesome](https://fontawesome.com/icons) icons into the SAP UI5 icon system, providing access to thousands of beautiful, scalable icons for your Fiori applications.
 
-[![Build app](https://github.com/mariokernich/ui5-fontawesome-library/workflows/Build%20app/badge.svg)](https://github.com/mariokernich/ui5-fontawesome-library/actions?query=workflow%3A%22Build+app%22)
-[![ESLint check](https://github.com/mariokernich/ui5-fontawesome-library/workflows/ESLint%20check/badge.svg)](https://github.com/mariokernich/ui5-fontawesome-library/actions?query=workflow%3A%22ESLint+check%22)
-[![TypeScript check](https://github.com/mariokernich/ui5-fontawesome-library/workflows/TypeScript%20check/badge.svg)](https://github.com/mariokernich/ui5-fontawesome-library/actions?query=workflow%3A%22TypeScript+check%22)
-[![UI5 Lint](https://github.com/mariokernich/ui5-fontawesome-library/workflows/UI5%20Lint%20check/badge.svg)](https://github.com/mariokernich/ui5-fontawesome-library/actions?query=workflow%3A%22UI5+Lint%22)
+[![Build app](https://github.com/mariokernich/ui5-fontawesome-lib/workflows/Build%20app/badge.svg)](https://github.com/mariokernich/ui5-fontawesome-lib/actions?query=workflow%3A%22Build+app%22)
+[![ESLint check](https://github.com/mariokernich/ui5-fontawesome-lib/workflows/ESLint%20check/badge.svg)](https://github.com/mariokernich/ui5-fontawesome-lib/actions?query=workflow%3A%22ESLint+check%22)
+[![TypeScript check](https://github.com/mariokernich/ui5-fontawesome-lib/workflows/TypeScript%20check/badge.svg)](https://github.com/mariokernich/ui5-fontawesome-lib/actions?query=workflow%3A%22TypeScript+check%22)
+[![UI5 Lint](https://github.com/mariokernich/ui5-fontawesome-lib/workflows/UI5%20Lint%20check/badge.svg)](https://github.com/mariokernich/ui5-fontawesome-lib/actions?query=workflow%3A%22UI5+Lint%22)
 [![Font Awesome](https://img.shields.io/badge/FontAwesome-7.0.0-blue.svg)](https://fontawesome.com/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![UI5](https://img.shields.io/badge/UI5-1.120.33+-green.svg)](https://sapui5.hana.ondemand.com/)
@@ -17,7 +17,7 @@ This library seamlessly integrates [Font Awesome](https://fontawesome.com/icons)
 ### NPM Package (Recommended)
 
 ```bash
-npm install ui5-fontawesome-library
+npm install ui5-fontawesome-lib
 ```
 
 ### Manual Installation
@@ -54,9 +54,9 @@ server:
   customMiddleware:
     - name: ui5-middleware-servestatic
       afterMiddleware: compression
-      mountPath: /resources/fontawesome/icons/library/
+      mountPath: /resources/fontawesome/icons/lib/
       configuration:
-        npmPackagePath: 'ui5-fontawesome-library/dist/resources/fontawesome/icons/library'
+        npmPackagePath: 'ui5-fontawesome-lib/dist/resources/fontawesome/icons/lib'
 ```
 
 ### 3. Update Manifest
@@ -70,7 +70,7 @@ Add the library dependency to your `manifest.json`:
     "libs": {
       "sap.ui.core": {},
       "sap.m": {},
-      "fontawesome.icons.library": {}
+      "fontawesome.icons.lib": {}
     }
   }
 }
@@ -142,8 +142,8 @@ Want to use Font Awesome Pro icons? Here's how to extend this library:
 
 ```bash
 # Clone the repository
-git clone https://github.com/mariokernich/ui5-fontawesome-library.git
-cd ui5-fontawesome-library
+git clone https://github.com/mariokernich/ui5-fontawesome-lib.git
+cd ui5-fontawesome-lib
 
 # Install dependencies
 npm install
@@ -179,7 +179,7 @@ Enable sourcemaps in your browser's developer console to debug the original Type
 ## 📊 Project Structure
 
 ```
-ui5-fontawesome-library/
+ui5-fontawesome-lib/
 ├── src/                    # Source files
 │   ├── fonts/             # Font Awesome font files
 │   ├── library.ts         # Main library file
@@ -207,8 +207,8 @@ This project is licensed under the Apache Software License, version 2.0 - see th
 
 ## 🔗 Links
 
-- 📦 [NPM Package](https://www.npmjs.com/package/ui5-fontawesome-library)
-- 🐙 [GitHub Repository](https://github.com/mariokernich/ui5-fontawesome-library)
+- 📦 [NPM Package](https://www.npmjs.com/package/ui5-fontawesome-lib)
+- 🐙 [GitHub Repository](https://github.com/mariokernich/ui5-fontawesome-lib)
 - 📚 [Font Awesome Documentation](https://fontawesome.com/docs)
 - 🎯 [SAP UI5 Documentation](https://sapui5.hana.ondemand.com/)
 

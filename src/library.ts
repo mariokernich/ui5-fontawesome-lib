@@ -9,12 +9,12 @@ import Lib from "sap/ui/core/Lib";
 import "sap/ui/core/library";
 
 /**
- * Initialization Code and shared classes of library fontawesome.icons.library.
+ * Initialization Code and shared classes of library fontawesome.icons.lib.
  */
 
 // delegate further initialization of this library to the Core
 const thisLib: { [key: string]: unknown } = Lib.init({
-	name: "fontawesome.icons.library",
+	name: "fontawesome.icons.lib",
 	apiVersion: 2,
 	version: "${version}",
 	dependencies: [
@@ -30,21 +30,21 @@ const thisLib: { [key: string]: unknown } = Lib.init({
 IconPool.registerFont({
 	collectionName: "fa-solid",
 	fontFamily: "fa-solid",
-	fontURI: sap.ui.require.toUrl("fontawesome/icons/library/fonts/fa-solid"),
+	fontURI: sap.ui.require.toUrl("fontawesome/icons/lib/fonts/fa-solid"),
 	lazy: false,
 });
 
 IconPool.registerFont({
 	collectionName: "fa-brands",
 	fontFamily: "fa-brands",
-	fontURI: sap.ui.require.toUrl("fontawesome/icons/library/fonts/fa-brands"),
+	fontURI: sap.ui.require.toUrl("fontawesome/icons/lib/fonts/fa-brands"),
 	lazy: false,
 });
 
 IconPool.registerFont({
 	collectionName: "fa-regular",
 	fontFamily: "fa-regular",
-	fontURI: sap.ui.require.toUrl("fontawesome/icons/library/fonts/fa-regular"),
+	fontURI: sap.ui.require.toUrl("fontawesome/icons/lib/fonts/fa-regular"),
 	lazy: false,
 });
 
