@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+
+echo "Commits must start with: mod, add, del, refac, feat, fix"
+
+npx --no -- commitlint --edit "$1"

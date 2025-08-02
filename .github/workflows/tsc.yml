@@ -1,0 +1,32 @@
+name: TypeScript check
+
+on:
+    push:
+        branches: [main, dev]
+    pull_request:
+        branches: [main, dev]
+
+jobs:
+    tsc:
+        permissions:
+            contents: read
+            packages: read
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [22.x]
+
+        steps:
+            - name: 🔨 checkout repository
+              uses: actions/checkout@v4
+            - name: 🔨 use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: "npm"
+            - name: 🔨 install package dependencies
+              run: npm ci
+            - name: 🔨 run typescript check
+              run: npm run check:ts

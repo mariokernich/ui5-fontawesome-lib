@@ -1,0 +1,59 @@
+{
+  "name": "ui5-fontawesome-library",
+  "version": "1.0.0",
+  "description": "UI5 Library: Font Awesome icons integration for SAP UI5/OpenUI5 applications",
+  "author": "Mario Kernich",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mariokernich/ui5-fontawesome-library.git"
+  },
+  "keywords": [
+    "ui5",
+    "openui5",
+    "sapui5",
+    "fontawesome",
+    "icons",
+    "sap",
+    "typescript"
+  ],
+  "main": "dist/resources/fontawesome/icons/library/library.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "src/**/*",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run build:icons && ui5 build --clean-dest",
+    "build:icons": "node scripts/generate.js",
+    "start": "npm run build:icons && ui5 serve -o test-resources/fontawesome/icons/library/IconListPreview.html --h2",
+    "check:ts": "tsc --noEmit",
+    "check:lint": "eslint src test",
+    "check:ui5": "ui5lint",
+    "check:all": "npm run check:ts && npm run check:lint && npm run check:ui5",
+    "fix:lint": "eslint src test --fix",
+    "prepublishOnly": "npm run build",
+    "deploy": "node scripts/deploy.js",
+    "clean": "rimraf dist coverage",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "@openui5/types": "^1.120.33",
+    "@ui5/cli": "latest",
+    "@ui5/linter": "latest",
+    "@ui5/ts-interface-generator": "latest",
+    "eslint": "^9.9.1",
+    "globals": "^15.9.0",
+    "husky": "latest",
+    "rimraf": "latest",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.3.0",
+    "ui5-middleware-livereload": "latest",
+    "ui5-tooling-transpile": "latest"
+  }
+}
