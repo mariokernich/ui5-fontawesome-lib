@@ -33,7 +33,7 @@ jobs:
         server: cdn.kernich.de
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASS }}
-        protocol: ftp
+        protocol: ftps
         local-dir: ./dist/
         server-dir: /ui5-fontawesome-lib/
-        verbose: true
+        log-level: verbose
