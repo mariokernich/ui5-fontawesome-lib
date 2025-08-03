@@ -30,9 +30,10 @@ jobs:
     - name: Deploy to FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: tcodes.kernich.de
+        server: cdn.kernich.de
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASS }}
-        protocol: ftps
+        protocol: ftp
         local-dir: ./dist/
         server-dir: /ui5-fontawesome-lib/
+        verbose: true
