@@ -3,6 +3,7 @@
 > **Enhance your SAP UI5/OpenUI5 applications with modern Font Awesome icons!** 🚀
 
 This library seamlessly integrates [Font Awesome](https://fontawesome.com/icons) icons into the SAP UI5 icon system, providing access to thousands of beautiful, scalable icons for your Fiori applications.
+Have a look at the [ui5-icon-explorer](https://github.com/mariokernich/ui5-icon-explorer) project or directly visit [ie.kernich.de](https://ie.kernich.de/) for an example integration and interactive showcase of all free Font Awesome icons together with the built-in icons. 
 
 [![Build app](https://github.com/mariokernich/ui5-fontawesome-lib/workflows/Build%20app/badge.svg)](https://github.com/mariokernich/ui5-fontawesome-lib/actions?query=workflow%3A%22Build+app%22)
 [![ESLint check](https://github.com/mariokernich/ui5-fontawesome-lib/workflows/ESLint%20check/badge.svg)](https://github.com/mariokernich/ui5-fontawesome-lib/actions?query=workflow%3A%22ESLint+check%22)
@@ -11,18 +12,6 @@ This library seamlessly integrates [Font Awesome](https://fontawesome.com/icons)
 [![Font Awesome](https://img.shields.io/badge/FontAwesome-7.0.0-blue.svg)](https://fontawesome.com/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![UI5](https://img.shields.io/badge/UI5-1.120.33+-green.svg)](https://sapui5.hana.ondemand.com/)
-
-## 📦 Installation
-
-### NPM Package (Recommended)
-
-```bash
-npm install ui5-fontawesome-lib
-```
-
-### Manual Installation
-
-Clone this repository and add it as a dependency to your local UI5 project setup.
 
 ## 🎯 Features
 
@@ -39,29 +28,7 @@ Clone this repository and add it as a dependency to your local UI5 project setup
 
 ## 🛠️ Setup & Configuration
 
-### 1. Install Dependencies
-
-```bash
-npm install ui5-middleware-servestatic
-```
-
-### 2. Configure UI5 Middleware
-
-Add the following configuration to your `ui5.yaml`:
-
-```yaml
-server:
-  customMiddleware:
-    - name: ui5-middleware-servestatic
-      afterMiddleware: compression
-      mountPath: /resources/fontawesome/icons/lib/
-      configuration:
-        npmPackagePath: 'ui5-fontawesome-lib/dist/resources/fontawesome/icons/lib'
-```
-
-### 3. Update Manifest
-
-Add the library dependency to your `manifest.json`:
+Add the `fontawesome.icons.lib` library dependency to your `manifest.json` and follow one of the next methods. 
 
 ```json
 {
@@ -75,6 +42,49 @@ Add the library dependency to your `manifest.json`:
   }
 }
 ```
+
+### Method 1: Using NPM Package with UI5 middleware (Recommended) 
+
+Install Dependencies
+
+```bash
+npm install ui5-fontawesome-lib ui5-middleware-servestatic --save-dev
+```
+
+Add the following configuration to your `ui5.yaml`:
+
+```yaml
+server:
+  customMiddleware:
+    - name: ui5-middleware-servestatic
+      afterMiddleware: compression
+      mountPath: /resources/fontawesome/icons/lib/
+      configuration:
+        npmPackagePath: 'ui5-fontawesome-lib/dist/resources/fontawesome/icons/lib'
+```
+
+### Method 2: Using CDN
+
+Add `https://cdn.kernich.de/ui5-fontawesome-lib/resources/fontawesome/icons/lib` to your resource roots for `fontawesome.icons.lib`
+
+```HTML
+<script
+  id="sap-ui-bootstrap"
+  src="https://sdk.openui5.org/resources/sap-ui-core.js"
+  data-sap-ui-resource-roots='{
+    "my.example.app": "./",
+    "fontawesome.icons.lib": "https://cdn.kernich.de/ui5-fontawesome-lib/resources/fontawesome/icons/lib"
+  }'
+  data-sap-ui-on-init="module:sap/ui/core/ComponentSupport"
+  data-sap-ui-compat-version="edge"
+  data-sap-ui-frame-options="trusted"
+  data-sap-ui-async="true"
+></script>
+```
+
+### Method 3: Local setup (for development)
+
+Clone this repository and add it as a dependency to your local UI5 project setup.
 
 ## 💻 Usage Examples
 
