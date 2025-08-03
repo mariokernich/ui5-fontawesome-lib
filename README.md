@@ -142,7 +142,7 @@ Want to use Font Awesome Pro icons? Here's how to extend this library:
    npm install --save @fortawesome/fontawesome-pro
    ```
 
-4. **Update build process**: Modify `generate.js` to include Pro font files by changing `../node_modules/@fortawesome/fontawesome-free` to `../node_modules/@fortawesome/fontawesome-pro`
+4. **Update build process**: Modify `generate.js` to include Pro font files by changing `const loadPro = false;` to `const loadPro = true;`
 
 5. **Register new styles**: Update `library.ts` to register additional icon styles
 

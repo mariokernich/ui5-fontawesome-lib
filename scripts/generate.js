@@ -1,10 +1,20 @@
 const fs = require("fs");
 const path = require("path");
 
-const faRoot = path.resolve(
+const loadPro = false;
+
+let faRoot = path.resolve(
 	__dirname,
 	"../node_modules/@fortawesome/fontawesome-free"
 );
+
+if (loadPro) {
+	faRoot = path.resolve(
+		__dirname,
+		"../node_modules/@fortawesome/fontawesome-pro"
+	);
+}
+
 const targetRoot = path.resolve(__dirname, "../src/fonts");
 
 const copy = (src, dest) => {
@@ -24,7 +34,11 @@ const copy = (src, dest) => {
 	});
 };
 
-const families = require("@fortawesome/fontawesome-free/metadata/icon-families.json");
+let families = require("@fortawesome/fontawesome-free/metadata/icon-families.json");
+
+if (loadPro) {
+	families = require("@fortawesome/fontawesome-pro/metadata/icon-families.json");
+}
 
 const fetchFont = (options) => {
 	const icons = {};
@@ -82,16 +96,15 @@ fetchFont({
 	weight: 400,
 });
 
-/*
-uncomment to generate light and thin fonts from pro version
-fetchFont({
-    name: "fa-light",
-    style: "light",
-    weight: 300,
-});
-fetchFont({
-    name: "fa-thin",
-    style: "thin",
-    weight: 100,
-});
-*/
+if (loadPro) {
+	fetchFont({
+		name: "fa-light",
+		style: "light",
+		weight: 300,
+	});
+	fetchFont({
+		name: "fa-thin",
+		style: "thin",
+		weight: 100,
+	});
+}

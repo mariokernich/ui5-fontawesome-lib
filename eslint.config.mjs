@@ -18,6 +18,11 @@ export default tseslint.config(
 				tsconfigRootDir: import.meta.dirname,
 			},
 		},
-		ignores: ["eslint.config.mjs", "commitlint.config.cjs"],
+		ignores: [
+			"eslint.config.mjs",
+			"commitlint.config.cjs",
+			"scripts/generate.js",
+			"scripts/deploy.js",
+		],
 	}
 );
