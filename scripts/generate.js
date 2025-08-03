@@ -37,6 +37,13 @@ const fetchFont = (options) => {
 				}
 			});
 		}
+		if (icon.familyStylesByLicense.pro) {
+			icon.familyStylesByLicense.pro.forEach((family) => {
+				if (family.family === "classic" && family.style === options.style) {
+					icons[key] = icon.unicode;
+				}
+			});
+		}
 	}
 
 	copy(
@@ -74,3 +81,17 @@ fetchFont({
 	style: "brands",
 	weight: 400,
 });
+
+/*
+uncomment to generate light and thin fonts from pro version
+fetchFont({
+    name: "fa-light",
+    style: "light",
+    weight: 300,
+});
+fetchFont({
+    name: "fa-thin",
+    style: "thin",
+    weight: 100,
+});
+*/
