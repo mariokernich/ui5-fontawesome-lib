@@ -35,5 +35,4 @@ jobs:
         password: ${{ secrets.FTP_PASS }}
         protocol: ftps
         local-dir: ./dist/
-        server-dir: /ui5-fontawesome-lib/
-        log-level: verbose
+        server-dir: /
