@@ -43,12 +43,20 @@ Add the `fontawesome.icons.lib` library dependency to your `manifest.json` and f
 }
 ```
 
-### Method 1: Using NPM Package with UI5 middleware (Recommended) 
+### Method 1: Using NPM Package (Recommended)
 
 Install Dependencies
 
 ```bash
-npm install ui5-fontawesome-lib ui5-middleware-servestatic --save-dev
+npm i ui5-fontawesome-lib
+```
+
+That should be it. The UI5 tooling will recognize the UI5 dependency (verifiable via UI5 CLI command `UI5 tree`) and take care of loading it for you.
+
+#### with UI5 middleware (alternative recommendation)
+
+```bash
+npm i ui5-fontawesome-lib && npm i -D ui5-middleware-servestatic
 ```
 
 Add the following configuration to your `ui5.yaml`:
