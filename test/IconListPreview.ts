@@ -1,4 +1,4 @@
-import Button, { Button$PressEvent } from "sap/m/Button";
+import Button, { type Button$PressEvent } from "sap/m/Button";
 import Column from "sap/m/Column";
 import ColumnListItem from "sap/m/ColumnListItem";
 import Label from "sap/m/Label";
@@ -6,7 +6,7 @@ import MessageBox from "sap/m/MessageBox";
 import MessageToast from "sap/m/MessageToast";
 import OverflowToolbar from "sap/m/OverflowToolbar";
 import Page from "sap/m/Page";
-import SearchField, { SearchField$LiveChangeEvent } from "sap/m/SearchField";
+import SearchField, { type SearchField$LiveChangeEvent } from "sap/m/SearchField";
 import Table from "sap/m/Table";
 import Text from "sap/m/Text";
 import Title from "sap/m/Title";
@@ -15,7 +15,7 @@ import Icon from "sap/ui/core/Icon";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
 import JSONModel from "sap/ui/model/json/JSONModel";
-import ListBinding from "sap/ui/model/ListBinding";
+import type ListBinding from "sap/ui/model/ListBinding";
 
 const tables: Table[] = [];
 

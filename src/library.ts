@@ -24,7 +24,7 @@ const thisLib: { [key: string]: unknown } = Lib.init({
 	interfaces: [],
 	controls: [],
 	elements: [],
-	noLibraryCSS: false,
+	noLibraryCSS: true,
 }) as { [key: string]: unknown };
 
 IconPool.registerFont({
