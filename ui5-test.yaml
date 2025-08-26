@@ -1,4 +1,4 @@
-specVersion: "1.0"
+specVersion: "4.0"
 metadata:
   name: fontawesome.icons.lib
 type: library
@@ -7,6 +7,8 @@ framework:
   version: 1.120.33
   libraries:
     - name: sap.ui.core
+    - name: sap.m
+    - name: themelib_sap_horizon
 builder:
   customTasks:
     - name: ui5-tooling-transpile-task

@@ -28,7 +28,7 @@
   "scripts": {
     "build": "npm run build:icons && ui5 build --clean-dest",
     "build:icons": "node scripts/generate.js",
-    "start": "npm run build:icons && ui5 serve -o test-resources/fontawesome/icons/lib/IconListPreview.html --h2",
+    "start": "npm run build:icons && ui5 serve -o test-resources/fontawesome/icons/lib/IconListPreview.html --h2 --config ui5-test.yaml",
     "check:ts": "tsc --noEmit",
     "check:lint": "eslint src test",
     "check:ui5": "ui5lint",
