@@ -23,7 +23,8 @@
     "dist/**/*",
     "src/**/*",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "ui5.yaml"
   ],
   "scripts": {
     "build": "npm run build:icons && ui5 build --clean-dest",
